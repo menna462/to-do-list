@@ -1,0 +1,156 @@
+/* إعدادات عامة */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+/* تنسيق الحاوية الرئيسية */
+.today-container {
+  width: 90%;
+  max-width: 600px;
+  margin: 30px auto;
+  background-color: #f6f6f6;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.today-container .add-task {
+  padding: 15px;
+  background-color: #846586;
+  position: relative;
+  border-radius: 8px;
+}
+
+.today-container .add-task input {
+  display: inline-block;
+  padding: 10px 15px;
+  border: none;
+  background-color: rgb(178, 36, 176);
+  width: calc(100% - 60px); /* تعديل العرض */
+  color: #fff;
+  font-size: 20px;
+  border-radius: 8px;
+}
+
+.today-container .add-task input:focus {
+  outline: none;
+}
+
+.today-container .add-task .plus {
+  position: absolute;
+  height: 44px;
+  width: 44px;
+  background-color: #fff;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  line-height: 44px;
+  text-align: center;
+  color: #846586;
+  cursor: pointer;
+  font-size: 38px;
+  transition: transform 0.3s;
+}
+
+.today-container .add-task .plus:hover {
+  transform: rotate(90deg);
+}
+
+.today-container .tasks-content {
+  padding: 15px;
+}
+
+.today-container .tasks-content .no-task-message {
+  color: #777;
+  font-size: 15px;
+}
+
+.today-container .tasks-content > span {
+  display: block;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.today-container .tasks-content > span:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.today-container .tasks-content .task-box .delete {
+  float: right;
+  background-color: #e91e63;
+  padding: 4px 10px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.today-container .tasks-content .task-box.finished {
+  text-decoration: line-through;
+}
+
+/* إحصائيات المهام */
+.task-stats {
+  margin: 10px auto;
+  width: 90%;
+  max-width: 600px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-stats .tasks-count,
+.task-stats .tasks-completed {
+  padding: 10px;
+}
+
+.task-stats .tasks-count span,
+.task-stats .tasks-completed span {
+  color: #fff;
+  padding: 1px 5px;
+  font-size: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.task-stats .tasks-count span {
+  background-color: #e91e63;
+}
+
+.task-stats .tasks-completed span {
+  background-color: #03a9f4;
+}
+
+/* وسائل الإعلام للتوافق مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .today-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .today-container .add-task input {
+    font-size: 16px;
+  }
+
+  .task-stats {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .task-stats .tasks-count,
+  .task-stats .tasks-completed {
+    width: 100%;
+    padding: 5px;
+  }
+}
